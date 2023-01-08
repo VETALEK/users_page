@@ -15,6 +15,14 @@ export const Users = () => {
       });
   }, []);
 
+  const handleEditUser = (_user) => {
+    // TODO: handle editing user
+  };
+
+  const handleDeleteUser = (_user) => {
+    // TODO: handle deleting user
+  };
+
   return (
     <>
       <h1>
@@ -25,6 +33,8 @@ export const Users = () => {
         ? (
           <UsersTable
             users={users}
+            onEdit={handleEditUser}
+            onDelete={handleDeleteUser}
           />
         ) : (
           <Skeleton

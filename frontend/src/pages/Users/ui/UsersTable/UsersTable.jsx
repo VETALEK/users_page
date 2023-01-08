@@ -11,6 +11,8 @@ import { UserRowsList } from './UserRowsList';
 
 export const UsersTable = (props) => {
   const {
+    onEdit = (_user, ..._eventArgs) => {},
+    onDelete = (_user, ..._eventArgs) => {},
     users = [],
   } = props;
 
@@ -27,6 +29,8 @@ export const UsersTable = (props) => {
       <TableBody>
         <UserRowsList
           users={users}
+          onEdit={onEdit}
+          onDelete={onDelete}
         />
       </TableBody>
     </Table>

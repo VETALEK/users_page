@@ -4,6 +4,8 @@ import { UserRow } from './UserRow';
 
 export const UserRowsList = (props) => {
   const {
+    onEdit = (_user, ..._eventArgs) => {},
+    onDelete = (_user, ..._eventArgs) => {},
     users = [],
   } = props;
 
@@ -13,6 +15,12 @@ export const UserRowsList = (props) => {
         <React.Fragment key={user.id}>
           <UserRow
             user={user}
+            onEdit={(...args) => {
+              onEdit(user, ...args);
+            }}
+            onDelete={(...args) => {
+              onDelete(user, ...args);
+            }}
           />
         </React.Fragment>
       ))}
